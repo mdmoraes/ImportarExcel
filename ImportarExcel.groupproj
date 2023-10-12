@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{3FBA3063-ABAD-4620-88B0-F47D4FD5FF41}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\TMS-FNCGrid-Excel-bridge-demos-master\TMS-FNCGrid-Excel-bridge-demos-master\delphi\fmx\SimpleImport\SimpleImport.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="SimpleImport">
+        <MSBuild Projects="..\TMS-FNCGrid-Excel-bridge-demos-master\TMS-FNCGrid-Excel-bridge-demos-master\delphi\fmx\SimpleImport\SimpleImport.dproj"/>
+    </Target>
+    <Target Name="SimpleImport:Clean">
+        <MSBuild Projects="..\TMS-FNCGrid-Excel-bridge-demos-master\TMS-FNCGrid-Excel-bridge-demos-master\delphi\fmx\SimpleImport\SimpleImport.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SimpleImport:Make">
+        <MSBuild Projects="..\TMS-FNCGrid-Excel-bridge-demos-master\TMS-FNCGrid-Excel-bridge-demos-master\delphi\fmx\SimpleImport\SimpleImport.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="SimpleImport"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="SimpleImport:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="SimpleImport:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

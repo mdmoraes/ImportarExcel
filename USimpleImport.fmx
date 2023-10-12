@@ -1,0 +1,321 @@
+object FSimpleImport: TFSimpleImport
+  Left = 0
+  Top = 0
+  Caption = 'Simple Import Demo'
+  ClientHeight = 485
+  ClientWidth = 1078
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object BtnAbout: TButton
+    Anchors = [akLeft, akBottom]
+    Position.X = 752.000000000000000000
+    Position.Y = 454.000000000000000000
+    Size.Width = 121.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'About'
+    OnClick = BtnAboutClick
+  end
+  object BtnImport: TButton
+    Anchors = [akLeft, akBottom]
+    Position.X = 8.000000000000000000
+    Position.Y = 452.000000000000000000
+    Size.Width = 121.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'Importar Planilha'
+    OnClick = BtnImportClick
+  end
+  object DataGrid: TTMSFNCGrid
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Position.X = 168.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 903.000000000000000000
+    Size.Height = 438.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    FixedColumns = 0
+    RowCount = 20
+    Options.Editing.CalcFormat = '%g'
+    Options.Grouping.AutoSelectGroup = True
+    Options.Grouping.AutoCheckGroup = True
+    Options.Grouping.CalcFormat = '%g'
+    Options.Grouping.GroupCountFormat = '(%d)'
+    Options.IO.XMLEncoding = 'ISO-8859-1'
+    Options.Mouse.ClickMargin = 0
+    Options.Mouse.ColumnSizeMargin = 6
+    Options.Mouse.RowSizeMargin = 6
+    Options.Selection.Mode = smRowRange
+    Options.Selection.ShowSelectionInFixedCells = True
+    Columns = <
+      item
+        BorderWidth = 1
+        FixedFont.Name = 'Segoe UI'
+        FixedFont.StyleExt = {00070000000000000004000000}
+        Font.Name = 'Segoe UI'
+        ID = ''
+        Width = 68.000000000000000000
+      end
+      item
+        BorderWidth = 1
+        FixedFont.Name = 'Segoe UI'
+        FixedFont.StyleExt = {00070000000000000004000000}
+        Font.Name = 'Segoe UI'
+        ID = ''
+        Width = 68.000000000000000000
+      end
+      item
+        BorderWidth = 1
+        FixedFont.Name = 'Segoe UI'
+        FixedFont.StyleExt = {00070000000000000004000000}
+        Font.Name = 'Segoe UI'
+        ID = ''
+        Width = 68.000000000000000000
+      end
+      item
+        BorderWidth = 1
+        FixedFont.Name = 'Segoe UI'
+        FixedFont.StyleExt = {00070000000000000004000000}
+        Font.Name = 'Segoe UI'
+        ID = ''
+        Width = 68.000000000000000000
+      end
+      item
+        BorderWidth = 1
+        FixedFont.Name = 'Segoe UI'
+        FixedFont.StyleExt = {00070000000000000004000000}
+        Font.Name = 'Segoe UI'
+        ID = ''
+        Width = 68.000000000000000000
+      end>
+    DefaultFont.Name = 'Segoe UI'
+    TopRow = 4
+    Appearance.FixedLayout.Fill.Color = xFFEEF2F9
+    Appearance.FixedLayout.Fill.ColorTo = claWhite
+    Appearance.FixedLayout.Font.Size = 14.000000000000000000
+    Appearance.FixedLayout.Font.Color = xFF454545
+    Appearance.FixedLayout.Font.Name = 'Segoe UI'
+    Appearance.FixedLayout.Font.StyleExt = {00070000000000000004000000}
+    Appearance.NormalLayout.Fill.Color = xFFF6F8FC
+    Appearance.NormalLayout.Font.Color = xFF7A7A7A
+    Appearance.NormalLayout.Font.Name = 'Segoe UI'
+    Appearance.GroupLayout.Fill.Color = xFF6E93C3
+    Appearance.GroupLayout.Fill.ColorTo = x7F2A96FF
+    Appearance.GroupLayout.Stroke.Color = xFFF0F0F0
+    Appearance.GroupLayout.Font.Color = claWhite
+    Appearance.GroupLayout.Font.Name = 'Segoe UI'
+    Appearance.SummaryLayout.Fill.Color = xFFB9C5D5
+    Appearance.SummaryLayout.Fill.ColorTo = x7F2A96FF
+    Appearance.SummaryLayout.Stroke.Color = xFFF0F0F0
+    Appearance.SummaryLayout.Font.Name = 'Segoe UI'
+    Appearance.SelectedLayout.Fill.Color = xFFBBDEFA
+    Appearance.SelectedLayout.Fill.ColorTo = x7F2A96FF
+    Appearance.SelectedLayout.Font.Color = xFF454545
+    Appearance.SelectedLayout.Font.Name = 'Segoe UI'
+    Appearance.FocusedLayout.Fill.Color = xFF74BDF4
+    Appearance.FocusedLayout.Fill.ColorTo = x7F2A96FF
+    Appearance.FocusedLayout.Font.Color = xFF454545
+    Appearance.FocusedLayout.Font.Name = 'Segoe UI'
+    Appearance.FixedSelectedLayout.Fill.Color = claLightsteelblue
+    Appearance.FixedSelectedLayout.Fill.ColorTo = x7F2A96FF
+    Appearance.FixedSelectedLayout.Font.Name = 'Segoe UI'
+    Appearance.BandLayout.Fill.Color = xFFFFFFFE
+    Appearance.BandLayout.Font.Color = xFF7A7A7A
+    Appearance.BandLayout.Font.Name = 'Segoe UI'
+    Appearance.ProgressLayout.Color = x7F2A96FF
+    Appearance.ProgressLayout.Format = '%.0f%%'
+    LeftCol = 0
+    ScrollMode = scmItemScrolling
+    FreezeRows = 1
+    GlobalFont.Scale = 1.000000000000000000
+    GlobalFont.Style = []
+    DesignTimeSampleData = True
+    object dlgSavePdf: TSaveDialog
+      Filter = 'Pdf files|*.pdf'
+      Left = 552
+      Top = 312
+    end
+  end
+  object OpenDialog: TOpenDialog
+    Filter = 
+      'Excel Files|*.xlsx;*.xls|Xls files (Excel 2003 or older)|*.xls|X' +
+      'lsx files (Excel 2007 or newer)|*.xlsx|All files|*.*'
+    Left = 592
+    Top = 136
+  end
+  object Panel1: TPanel
+    Anchors = [akLeft, akTop, akBottom]
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 146.000000000000000000
+    Size.Height = 438.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Label1: TLabel
+      Position.X = 8.000000000000000000
+      Position.Y = 357.000000000000000000
+      Size.Width = 73.000000000000000000
+      Size.Height = 13.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Zoom'
+    end
+    object Panel2: TPanel
+      Position.X = 1.000000000000000000
+      Position.Y = 1.000000000000000000
+      Size.Width = 144.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Label2: TLabel
+        Position.X = 15.000000000000000000
+        Position.Y = 3.000000000000000000
+        Text = 'Import Options'
+        TabOrder = 12
+      end
+    end
+    object cbFormatting: TCheckBox
+      IsChecked = True
+      Position.X = 8.000000000000000000
+      Position.Y = 100.000000000000000000
+      Size.Width = 97.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Formatting'
+    end
+    object cbCellSizes: TCheckBox
+      IsChecked = True
+      Position.X = 8.000000000000000000
+      Position.Y = 123.000000000000000000
+      Size.Width = 97.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Cell Sizes'
+    end
+    object cbFormulas: TCheckBox
+      IsChecked = True
+      Position.X = 8.000000000000000000
+      Position.Y = 31.000000000000000000
+      Size.Width = 97.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Formulas'
+    end
+    object cbImages: TCheckBox
+      IsChecked = True
+      Position.X = 8.000000000000000000
+      Position.Y = 54.000000000000000000
+      Size.Width = 97.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Images'
+    end
+    object cbOutlines: TCheckBox
+      IsChecked = True
+      Position.X = 8.000000000000000000
+      Position.Y = 192.000000000000000000
+      Size.Width = 97.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Text = 'Outlines'
+    end
+    object cbHTML: TCheckBox
+      Position.X = 8.000000000000000000
+      Position.Y = 169.000000000000000000
+      Size.Width = 97.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      Text = 'HTML'
+    end
+    object cbReadOnlyToLocked: TCheckBox
+      Position.X = 8.000000000000000000
+      Position.Y = 146.000000000000000000
+      Size.Width = 129.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+      Text = 'ReadOnly -> Locked'
+    end
+    object cbClearCells: TCheckBox
+      IsChecked = True
+      Position.X = 8.000000000000000000
+      Position.Y = 262.000000000000000000
+      Size.Width = 97.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 8
+      Text = 'Clear Cells'
+    end
+    object cbResizeGrid: TCheckBox
+      IsChecked = True
+      Position.X = 8.000000000000000000
+      Position.Y = 285.000000000000000000
+      Size.Width = 138.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 9
+      Text = 'Resize Grid'
+    end
+    object cbComments: TCheckBox
+      IsChecked = True
+      Position.X = 8.000000000000000000
+      Position.Y = 77.000000000000000000
+      Size.Width = 97.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 10
+      Text = 'Comments'
+    end
+    object edZoom: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 11
+      Text = '0'
+      Position.X = 8.000000000000000000
+      Position.Y = 376.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object btnExportarPDF: TButton
+    Position.X = 312.000000000000000000
+    Position.Y = 454.000000000000000000
+    Size.Width = 121.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    Text = 'Gerar PDF'
+    OnClick = btnExportarPDFClick
+  end
+  object btnFechar: TButton
+    Position.X = 936.000000000000000000
+    Position.Y = 455.000000000000000000
+    Size.Width = 121.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 14
+    Text = 'Fechar'
+    OnClick = btnFecharClick
+  end
+  object ExcelImport: TTMSFNCGridExcelImport
+    Grid = DataGrid
+    Version = '3.1'
+    Left = 728
+    Top = 144
+  end
+  object ExcelExport: TTMSFNCGridExcelExport
+    Grid = DataGrid
+    Version = '3.1'
+    Left = 792
+    Top = 296
+  end
+end
